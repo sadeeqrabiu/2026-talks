@@ -47,7 +47,7 @@ const props = withDefaults(defineProps<Props>(), {
         
         <!-- Main Title & Subtitle Section -->
         <div class="my-auto py-6 space-y-4">
-          <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.08] text-white">
+          <h1 class="text-3xl lg:text-5xl font-black tracking-tight leading-[1.12] text-white">
             {{ props.title }}
           </h1>
 

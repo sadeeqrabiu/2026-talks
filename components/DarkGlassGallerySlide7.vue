@@ -31,7 +31,7 @@ const activeImage = ref(0)
           
           <!-- Slide Title & Subtitle -->
           <div>
-            <h1 class="text-4xl lg:text-5.5xl font-black tracking-tight leading-[1.1] text-white">
+            <h1 class="text-2.5xl lg:text-4.5xl font-black tracking-tight leading-[1.12] text-white">
               The Real Value of Open Source
             </h1>
             <p class="text-sm lg:text-base text-zinc-300 font-medium mt-2">

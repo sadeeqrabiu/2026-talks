@@ -21,7 +21,7 @@
       
 
           <!-- Slide Title -->
-          <h1 class="text-5xl lg:text-7xl font-black tracking-tight leading-[1.05] text-white">
+          <h1 class="text-3xl lg:text-5xl font-black tracking-tight leading-[1.08] text-white">
             Thank You!
           </h1>
 

@@ -41,7 +41,7 @@ const steps = [
         <div class="my-auto py-4 space-y-5">
           
           <!-- Slide Title -->
-          <h1 class="text-4xl lg:text-5.5xl font-black tracking-tight leading-[1.1] text-white">
+          <h1 class="text-2.5xl lg:text-4.5xl font-black tracking-tight leading-[1.12] text-white">
             The Code Is Only the Beginning
           </h1>
 
