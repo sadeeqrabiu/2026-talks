@@ -27,6 +27,10 @@ mdc: true
 </div>
 
 ---
+src: ./pages/09-qr-interaction.md
+---
+
+---
 src: ./pages/02-old-definition.md
 ---
 

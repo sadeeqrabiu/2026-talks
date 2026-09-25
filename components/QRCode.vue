@@ -16,7 +16,9 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const qrUrl = computed(() => {
-  if (!props.url) return ''
+  if (props.url === 'https://slidev-audience-client.pages.dev/' || !props.url) {
+    return '/images/audience-qr.svg'
+  }
   return `https://api.qrserver.com/v1/create-qr-code/?size=${props.size}x${props.size}&data=${encodeURIComponent(props.url)}`
 })
 </script>
@@ -24,21 +26,30 @@ const qrUrl = computed(() => {
 <template>
   <div class="flex flex-col items-center justify-center space-y-4">
     <!-- QR Code Glass Frame -->
-    <div class="p-4 rounded-2xl bg-white shadow-[0_0_40px_rgba(0,255,136,0.3)] border border-white/20">
+    <div class="p-4 rounded-3xl bg-white shadow-[0_0_50px_rgba(34,197,94,0.35)] border border-white/30 transition-transform duration-300 hover:scale-[1.02]">
       <img
         :src="qrUrl"
         :alt="`QR Code for ${props.url}`"
         :width="props.size"
         :height="props.size"
-        class="block rounded-lg"
+        class="block rounded-xl object-contain"
       />
     </div>
 
-    <!-- Instructions -->
-    <div class="text-center">
-      <p class="text-sm font-semibold text-white">{{ props.title }}</p>
-      <p class="text-xs font-mono text-zinc-400 mt-1">{{ props.instruction }}</p>
-      <p class="text-[10px] font-mono text-[#4ade80] mt-2 underline break-all max-w-xs">{{ props.url }}</p>
+    <!-- Instructions & Link -->
+    <div class="text-center space-y-1">
+      <p class="text-base font-bold text-white tracking-tight">{{ props.title }}</p>
+      <p class="text-xs font-mono text-zinc-400">{{ props.instruction }}</p>
+      <a
+        :href="props.url"
+        target="_blank"
+        rel="noopener"
+        @click.stop
+        class="inline-block text-xs font-mono text-[#4ade80] hover:underline underline-offset-4 mt-2 transition-colors"
+      >
+        {{ props.url }}
+      </a>
     </div>
   </div>
 </template>
+
