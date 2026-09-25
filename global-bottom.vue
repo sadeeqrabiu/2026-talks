@@ -16,9 +16,20 @@
       v-if="reactionsEnabled && !isDedicatedQRSlide" 
       class="fixed top-4 right-4 z-[10000] pointer-events-auto select-none"
     >
+      <!-- Collapsed Mono Badge (Talk 02) -->
+      <button
+        v-if="!isQrExpanded && isMono"
+        @click.stop="isQrExpanded = true"
+        class="flex items-center gap-2 px-3 py-1.5 bg-black hover:bg-white border border-white text-white hover:text-black font-mono text-[11px] tracking-[0.12em] uppercase transition-colors duration-200 cursor-pointer"
+        title="Show Audience Interaction QR Code"
+      >
+        <span>[ React live ]</span>
+        <div class="i-carbon-qr-code text-sm" />
+      </button>
+
       <!-- Collapsed Glass Pill Badge -->
       <button
-        v-if="!isQrExpanded"
+        v-else-if="!isQrExpanded"
         @click.stop="isQrExpanded = true"
         class="group flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-950/80 hover:bg-zinc-900/90 border border-white/15 hover:border-[#22c55e]/50 backdrop-blur-xl shadow-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,197,94,0.3)] cursor-pointer"
         title="Show Audience Interaction QR Code"
@@ -83,7 +94,7 @@
           @click.stop="goToQRSlide"
           class="mt-3 w-full py-1.5 px-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-[11px] font-mono text-zinc-400 hover:text-white transition-all text-center cursor-pointer flex items-center justify-center gap-1.5"
         >
-          <span>Open Full Join Slide (02)</span>
+          <span>Open Full Join Slide</span>
           <span class="text-[#22c55e]">→</span>
         </button>
       </div>
@@ -109,11 +120,16 @@ const isQrExpanded = useStorage('slidev-audience-qr-open', false)
 const nav = useNav()
 onMounted(() => registerDeckTools(nav))
 
-// Hide floating badge when on the dedicated QR slide (Slide 2)
-const isDedicatedQRSlide = computed(() => nav.currentPage.value === 2)
+const frontmatter = computed(() => nav.currentSlideRoute.value?.meta?.slide?.frontmatter ?? {})
+
+// Hide floating badge on the selector and on the dedicated QR (join) slide
+const isDedicatedQRSlide = computed(() => ['join', 'index'].includes(frontmatter.value.routeAlias))
+
+// Talk 02 uses the black & white cyber-mono system - no green, no ping
+const isMono = computed(() => frontmatter.value.talk === 'first-commit')
 
 function goToQRSlide() {
   isQrExpanded.value = false
-  nav.go(2)
+  nav.go('join')
 }
 </script>

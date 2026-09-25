@@ -1,13 +1,22 @@
 ---
 theme: default
 layout: none
-title: Open Source - Beyond the Code
+title: 2026 Talks
 info: |
-  ## Open Source: Beyond the Code
-  A talk on community, engineering responsibility, Freedom Tech, and contributing.
+  ## 2026 Talks
+  01 - Open Source: Beyond the Code
+  02 - From First Commit to Confident Contributor: Building in the Age of AI
 drawings:
   persist: false
 mdc: true
+routeAlias: index
+---
+
+<TalkSelector />
+
+---
+layout: none
+routeAlias: open-source
 ---
 
 <div @click="$slidev.nav.next" class="absolute inset-0 cursor-pointer">
@@ -56,4 +65,48 @@ src: ./pages/07-my-journey.md
 
 ---
 src: ./pages/08-real-software.md
+---
+
+---
+src: ./pages/first-commit/01-title.md
+---
+
+---
+src: ./pages/first-commit/02-first-commit.md
+---
+
+---
+src: ./pages/first-commit/03-user-vs-contributor.md
+---
+
+---
+src: ./pages/first-commit/04-ai-lowered-the-floor.md
+---
+
+---
+src: ./pages/first-commit/05-generated-not-understood.md
+---
+
+---
+src: ./pages/first-commit/06-the-loop.md
+---
+
+---
+src: ./pages/first-commit/07-pair-not-pilot.md
+---
+
+---
+src: ./pages/first-commit/08-review-is-the-teacher.md
+---
+
+---
+src: ./pages/first-commit/09-confidence-is-evidence.md
+---
+
+---
+src: ./pages/first-commit/10-start-this-week.md
+---
+
+---
+src: ./pages/first-commit/11-end.md
 ---
