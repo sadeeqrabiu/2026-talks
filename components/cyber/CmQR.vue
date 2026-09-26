@@ -60,7 +60,7 @@ const host = props.url.replace(/^https?:\/\//, '').replace(/\/$/, '')
           <span class="cm-qr-mark -top-[9px] -right-[5px]">+</span>
           <span class="cm-qr-mark -bottom-[9px] -left-[5px]">+</span>
           <span class="cm-qr-mark -bottom-[9px] -right-[5px]">+</span>
-          <div class="bg-white p-3">
+          <div class="bg-[#fff] p-3">
             <img :src="props.qr" :alt="`QR code for ${props.url}`" width="220" height="220" class="block">
           </div>
         </div>

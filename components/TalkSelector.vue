@@ -16,7 +16,7 @@ onKeyStroke(['1', '2'], (e) => {
 </script>
 
 <template>
-  <div class="absolute inset-0 flex bg-black text-white select-none overflow-hidden">
+  <div class="absolute inset-0 flex bg-[#000] text-white select-none overflow-hidden">
     <!-- 01 — Dark glass (existing talk's language) -->
     <button
       class="group relative flex w-1/2 flex-col justify-between p-12 text-left bg-transparent border-0 text-white cursor-pointer font-sans"
@@ -43,7 +43,7 @@ onKeyStroke(['1', '2'], (e) => {
 
     <!-- 02 — Cyber mono -->
     <button
-      class="cm group relative flex w-1/2 flex-col justify-between p-12 text-left border-0 border-l border-solid border-[var(--cm-line)] cursor-pointer transition-colors duration-200 hover:!bg-white hover:!text-black"
+      class="cm group relative flex w-1/2 flex-col justify-between p-12 text-left border-0 border-l border-solid border-[var(--cm-line)] cursor-pointer transition-colors duration-200 hover:!bg-[#fff] hover:!text-black"
       @click.stop="open('first-commit')"
     >
       <div class="flex items-center justify-between">
@@ -58,7 +58,7 @@ onKeyStroke(['1', '2'], (e) => {
         <h2 class="cm-display text-[44px] m-0">
           From first commit<br>to confident<br>contributor
         </h2>
-        <div class="h-px my-6 bg-[var(--cm-line)] group-hover:bg-black/20" />
+        <div class="h-px my-6 bg-[var(--cm-line)] group-hover:bg-[#000]/20" />
         <p class="text-sm m-0">
           <span class="cm-dim group-hover:!text-black/50">&gt;</span> Building in the age of AI<span class="ml-1">█</span>
         </p>
@@ -69,7 +69,7 @@ onKeyStroke(['1', '2'], (e) => {
 
     <!-- Shared top strip -->
     <div class="absolute top-0 inset-x-0 flex justify-center pointer-events-none">
-      <span class="mt-5 px-3 py-1 bg-black border border-white/15 text-[11px] font-mono tracking-[0.2em] text-zinc-400 uppercase">
+      <span class="mt-5 px-3 py-1 bg-[#000] border border-white/15 text-[11px] font-mono tracking-[0.2em] text-zinc-400 uppercase">
         Sadiq Rabiu · 2026 Talks · Select a topic
       </span>
     </div>

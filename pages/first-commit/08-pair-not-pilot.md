@@ -5,7 +5,7 @@ talk: first-commit
 
 <CmSteps
   section="AI"
-  :index="7"
+  :index="8"
   title="AI is your pair, not your pilot"
   prompt="man ai --rules"
   :steps="[

@@ -20,7 +20,7 @@ const props = withDefaults(defineProps<Props>(), {
   role: '',
   prompt: '',
   index: 1,
-  total: 11,
+  total: 12,
 })
 </script>
 

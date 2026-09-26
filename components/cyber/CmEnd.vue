@@ -11,8 +11,8 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  index: 11,
-  total: 11,
+  index: 12,
+  total: 12,
   lines: () => [],
   sub: '',
   links: () => [],
@@ -41,7 +41,7 @@ const nav = useNav()
           </li>
         </ul>
         <button
-          class="self-start border border-[var(--cm-fg)] bg-transparent text-[var(--cm-fg)] px-4 py-2 cm-label !text-[var(--cm-fg)] cursor-pointer transition-colors duration-200 hover:bg-white hover:!text-black"
+          class="self-start border border-[var(--cm-fg)] bg-transparent text-[var(--cm-fg)] px-4 py-2 cm-label !text-[var(--cm-fg)] cursor-pointer transition-colors duration-200 hover:bg-[#fff] hover:!text-black"
           @click.stop="nav.go('index')"
         >
           [ ← INDEX ]

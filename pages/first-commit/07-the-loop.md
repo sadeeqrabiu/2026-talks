@@ -5,7 +5,7 @@ talk: first-commit
 
 <CmSteps
   section="METHOD"
-  :index="6"
+  :index="7"
   title="The contributor loop"
   prompt="while (!confident) loop()"
   :steps="[

@@ -5,7 +5,7 @@ talk: first-commit
 
 <CmSteps
   section="GROWTH"
-  :index="9"
+  :index="10"
   title="Confidence is built from evidence"
   prompt="git log --author=you"
   :steps="[

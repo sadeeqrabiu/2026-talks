@@ -12,7 +12,7 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   section: '',
   index: 1,
-  total: 11,
+  total: 12,
   slug: 'FIRST_COMMIT → CONFIDENT_CONTRIBUTOR',
   scan: false,
 })
@@ -32,7 +32,7 @@ const pad = (n: number) => String(n).padStart(2, '0')
     <span class="cm-mark bottom-6 right-6 translate-x-1/2 translate-y-1/2">+</span>
 
     <!-- Header -->
-    <!-- Counter sits left: the right corner is reserved for the global "React live" badge -->
+    <!-- Counter sits left: the right corner is where the nav-bar QR popup opens -->
     <header class="absolute top-6 inset-x-6 h-10 px-5 flex items-center gap-6 border-b border-[var(--cm-line)]">
       <span class="cm-label !text-[var(--cm-fg)]">{{ pad(props.index) }}<span class="cm-dim">/{{ pad(props.total) }}</span></span>
       <span class="cm-label">

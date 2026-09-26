@@ -21,7 +21,7 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   section: '',
   index: 1,
-  total: 11,
+  total: 12,
   title: '',
   invert: 'right',
 })

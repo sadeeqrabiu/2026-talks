@@ -5,7 +5,7 @@ talk: first-commit
 
 <CmSteps
   section="TODO"
-  :index="10"
+  :index="11"
   title="Start this week"
   prompt="cat TODO.md"
   terminal
