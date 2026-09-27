@@ -5,7 +5,7 @@ talk: first-commit
 
 <CmSteps
   section="TODO"
-  :index="11"
+  :index="15"
   title="Start this week"
   prompt="cat TODO.md"
   terminal
@@ -17,3 +17,12 @@ talk: first-commit
     { title: 'Respond to review within a day', body: 'Momentum beats perfection.' },
   ]"
 />
+
+<!--
+Don't wait until you feel ready — you won't.
+
+And don't start with "I want to become an open-source contributor." That's too big to
+act on. Start with "I use this project. What can I improve?"
+
+That makes the problem concrete, and concrete problems get solved.
+-->

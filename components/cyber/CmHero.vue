@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import CmFrame from './CmFrame.vue'
+import { CM_TOTAL } from './deck'
 
 interface Props {
   kicker?: string
   lines?: string[]
   subtitle?: string
+  hook?: string
   speaker?: string
   role?: string
   prompt?: string
@@ -16,11 +18,12 @@ const props = withDefaults(defineProps<Props>(), {
   kicker: '',
   lines: () => [],
   subtitle: '',
+  hook: '',
   speaker: '',
   role: '',
   prompt: '',
   index: 1,
-  total: 12,
+  total: CM_TOTAL,
 })
 </script>
 
@@ -52,6 +55,9 @@ const props = withDefaults(defineProps<Props>(), {
         </h1>
         <p v-if="props.subtitle" class="mt-6 text-lg">
           <span class="cm-dim">&gt;</span> {{ props.subtitle }}<span class="ml-1">█</span>
+        </p>
+        <p v-if="props.hook" class="mt-4 max-w-xl text-[15px] cm-dim leading-relaxed m-0">
+          {{ props.hook }}
         </p>
       </div>
     </div>

@@ -5,7 +5,7 @@ talk: first-commit
 
 <CmSteps
   section="AI"
-  :index="8"
+  :index="10"
   title="AI is your pair, not your pilot"
   prompt="man ai --rules"
   :steps="[
@@ -15,3 +15,10 @@ talk: first-commit
     { title: 'Follow the project\'s AI policy', body: 'Some projects want disclosure. Some don\'t accept AI code. Read it first.' },
   ]"
 />
+
+<!--
+AI should make you more capable, not less accountable.
+
+Rule three is the one that matters. It's also the one that will save you from the
+single most embarrassing thing that can happen in a code review.
+-->

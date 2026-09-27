@@ -76,41 +76,57 @@ src: ./pages/first-commit/02-join.md
 ---
 
 ---
-src: ./pages/first-commit/03-first-commit.md
+src: ./pages/first-commit/03-the-fear.md
 ---
 
 ---
-src: ./pages/first-commit/04-user-vs-contributor.md
+src: ./pages/first-commit/04-two-ways.md
 ---
 
 ---
-src: ./pages/first-commit/05-ai-lowered-the-floor.md
+src: ./pages/first-commit/05-not-just-code.md
 ---
 
 ---
-src: ./pages/first-commit/06-generated-not-understood.md
+src: ./pages/first-commit/06-attention-first.md
 ---
 
 ---
-src: ./pages/first-commit/07-the-loop.md
+src: ./pages/first-commit/07-ai-is-your-map.md
 ---
 
 ---
-src: ./pages/first-commit/08-pair-not-pilot.md
+src: ./pages/first-commit/08-bottleneck.md
 ---
 
 ---
-src: ./pages/first-commit/09-review-is-the-teacher.md
+src: ./pages/first-commit/09-generated-not-understood.md
 ---
 
 ---
-src: ./pages/first-commit/10-confidence-is-evidence.md
+src: ./pages/first-commit/10-pair-not-pilot.md
 ---
 
 ---
-src: ./pages/first-commit/11-start-this-week.md
+src: ./pages/first-commit/11-the-loop.md
 ---
 
 ---
-src: ./pages/first-commit/12-end.md
+src: ./pages/first-commit/12-review.md
+---
+
+---
+src: ./pages/first-commit/13-evidence.md
+---
+
+---
+src: ./pages/first-commit/14-the-arc.md
+---
+
+---
+src: ./pages/first-commit/15-start-this-week.md
+---
+
+---
+src: ./pages/first-commit/16-end.md
 ---

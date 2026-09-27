@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import CmFrame from './CmFrame.vue'
+import { CM_TOTAL } from './deck'
 
 interface Props {
   index?: number
@@ -9,8 +10,8 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  index: 2,
-  total: 12,
+  index: 1,
+  total: CM_TOTAL,
   url: 'https://slidev-audience-client.pages.dev/',
   qr: '/images/audience-qr.svg',
 })

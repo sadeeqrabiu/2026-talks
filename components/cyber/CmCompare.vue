@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import CmFrame from './CmFrame.vue'
 import CmCompareSide from './CmCompareSide.vue'
+import { CM_TOTAL } from './deck'
 
 interface Side {
   label: string
@@ -21,7 +22,7 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   section: '',
   index: 1,
-  total: 12,
+  total: CM_TOTAL,
   title: '',
   invert: 'right',
 })

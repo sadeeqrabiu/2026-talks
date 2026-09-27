@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import CmFrame from './CmFrame.vue'
+import { CM_TOTAL } from './deck'
 
 interface Step {
   title: string
@@ -19,7 +20,7 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   section: '',
   index: 1,
-  total: 12,
+  total: CM_TOTAL,
   title: '',
   prompt: '',
   steps: () => [],

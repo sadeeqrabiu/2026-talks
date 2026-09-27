@@ -3,16 +3,29 @@ layout: none
 talk: first-commit
 ---
 
-<CmSteps
+<CmLoop
   section="METHOD"
-  :index="7"
+  :index="11"
   title="The contributor loop"
   prompt="while (!confident) loop()"
-  :steps="[
-    { title: 'Read', body: 'README, CONTRIBUTING, then the code around the issue.' },
-    { title: 'Run', body: 'Build it locally. Run the tests before touching anything.' },
-    { title: 'Break', body: 'Reproduce the bug. Change one thing and watch what fails.' },
-    { title: 'Fix', body: 'The smallest change that solves the problem.' },
-    { title: 'Explain', body: 'Say what changed and why, in your own words.' },
+  center="while (!confident)"
+  :nodes="[
+    { title: 'Read', body: 'CONTRIBUTING, then the code around the issue' },
+    { title: 'Run', body: 'Build locally, run the tests first' },
+    { title: 'Break', body: 'Reproduce it before you fix it' },
+    { title: 'Fix', body: 'The smallest change at the root cause' },
+    { title: 'Explain', body: 'In your own words' },
   ]"
 />
+
+<!--
+This is the whole method, and it's a loop, not a ladder. You'll go round it dozens
+of times and it never stops being the process.
+
+"Break" is the step everyone skips. It means reproduce the problem. Don't jump
+straight to fixing something you don't understand — make the problem observable
+first, then fix it, and you'll know the fix worked.
+
+Fix means the smallest change that addresses the root cause. Not the biggest change
+you can justify.
+-->
