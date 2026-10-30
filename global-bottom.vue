@@ -11,6 +11,12 @@
       class="size-full"
     />
 
+    <!-- Talk 03: Green Rail & Backdrop Layer -->
+    <div v-if="isOsIntro" class="absolute inset-0 pointer-events-none overflow-hidden">
+      <OsBackdrop />
+      <OsRail />
+    </div>
+
     <!-- QR popup for latecomers - opened from the nav bar QR button (custom-nav-controls.vue), hidden on the join slides -->
     <div
       v-if="reactionsEnabled && isQrExpanded && !isDedicatedQRSlide"
@@ -52,7 +58,46 @@
         </button>
       </div>
 
-      <!-- Expanded Floating Glass Modal Card -->
+      <!-- Expanded Green Rail Card (Talk 03) -->
+      <div
+        v-else-if="isOsIntro"
+        @click.stop
+        class="w-64 p-4 bg-[#000] border border-[#01d758] text-white font-mono flex flex-col shadow-[0_0_24px_rgba(0,255,0,0.25)]"
+      >
+        <div class="flex items-center justify-between mb-3 text-[11px] tracking-[0.16em] uppercase text-[#01d758]">
+          <span class="flex items-center gap-1.5">
+            <span class="size-1.5 rounded-full bg-[#00ff00] shadow-[0_0_6px_#00ff00]" />
+            Live reactions
+          </span>
+          <button
+            @click.stop="isQrExpanded = false"
+            class="px-1.5 bg-transparent border border-[#01d758]/50 hover:border-[#00ff00] text-[#01d758] hover:text-[#00ff00] text-[11px] cursor-pointer"
+            title="Close"
+          >
+            ×
+          </button>
+        </div>
+        <div class="bg-[#fff] p-2.5 rounded">
+          <img src="/audience-qr.svg" alt="Audience Live Interaction QR Code" class="block w-full aspect-square" />
+        </div>
+        <a
+          :href="AUDIENCE_URL"
+          target="_blank"
+          rel="noopener"
+          @click.stop
+          class="mt-3 text-[10px] text-white/50 hover:text-[#00ff00] break-all"
+        >
+          &gt; slidev-audience-client.pages.dev
+        </a>
+        <button
+          @click.stop="goToQRSlide"
+          class="mt-3 w-full py-1.5 bg-transparent border border-[#01d758] text-[#00ff00] hover:bg-[#01d758]/20 text-[11px] tracking-[0.12em] uppercase transition-colors duration-200 cursor-pointer"
+        >
+          [ Open join slide → ]
+        </button>
+      </div>
+
+      <!-- Expanded Floating Glass Modal Card (Talk 01) -->
       <div
         v-else
         @click.stop
@@ -115,6 +160,8 @@ import { computed, onMounted } from 'vue'
 import { useStorage } from '@vueuse/core'
 import { useNav } from '@slidev/client'
 import AudienceReactions from './components/audience/AudienceReactions.vue'
+import OsBackdrop from './components/os-intro/OsBackdrop.vue'
+import OsRail from './components/os-intro/OsRail.vue'
 import { registerDeckTools } from './composables/deckTools'
 
 const REACTIONS_HOST = 'slidev-audience.s4ndeep1203.workers.dev'
@@ -131,13 +178,21 @@ onMounted(() => registerDeckTools(nav))
 const frontmatter = computed(() => nav.currentSlideRoute.value?.meta?.slide?.frontmatter ?? {})
 
 // Hide the QR popup on the selector and on each talk's dedicated QR (join) slide
-const isDedicatedQRSlide = computed(() => ['join', 'join-mono', 'index'].includes(frontmatter.value.routeAlias))
+const isDedicatedQRSlide = computed(() => ['join', 'join-mono', 'join-os', 'index'].includes(frontmatter.value.routeAlias))
 
 // Talk 02 uses the black & white cyber-mono system - no green, no ping
 const isMono = computed(() => frontmatter.value.talk === 'first-commit')
+// Talk 03 uses the green rail system
+const isOsIntro = computed(() => frontmatter.value.talk === 'open-source-intro')
 
 function goToQRSlide() {
   isQrExpanded.value = false
-  nav.go(isMono.value ? 'join-mono' : 'join')
+  if (isMono.value) {
+    nav.go('join-mono')
+  } else if (isOsIntro.value) {
+    nav.go('join-os')
+  } else {
+    nav.go('join')
+  }
 }
 </script>

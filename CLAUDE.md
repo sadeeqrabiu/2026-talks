@@ -20,9 +20,15 @@ This workflow is optimized for **Claude Opus 5.5** (`claude-opus-5-5`).
    - **Design System**: **Cyber Mono** (`cyber-mono-deck`)
    - **Aesthetic**: Strict black-and-white minimal cyberpunk. Terminal / HUD / technical-drawing cues, hairlines (`#262626`), `0` border-radius, pure white on black (`#000`), Archivo 800/900 uppercase display, JetBrains Mono body/metadata, registration marks (`+`), bracketed indices (`[01]`), static block cursors. No neon, no gradients, no drop shadows.
 
-3. **Shared Shell & Controls**
-   - `slides.md` slide 1: `TalkSelector.vue` (`routeAlias: index`)
-   - `global-bottom.vue`: Global layer managing audience reaction animations and the join QR trigger
+3. **Talk 03: "Open Source — An Introduction"**
+   - **Route Alias**: `open-source-intro`
+   - **Slide Range**: `pages/open-source-intro/01-title.md` through `pages/open-source-intro/19-end.md`
+   - **Design System**: **Green Rail** (`os-intro.css`)
+   - **Aesthetic**: Four colors (#01D758 structure, #00FF00 live accent, #FFFFFF text, #000000 background). Source Code Pro typography, vertical glowing commit rail with live node progress, parallax dot grid background, planetary horizon, and Halloween accents.
+
+4. **Shared Shell & Controls**
+   - `slides.md` slide 1: `TalkSelector.vue` (`routeAlias: index`, supports keys `1`, `2`, `3`)
+   - `global-bottom.vue`: Global layer managing audience reaction animations, Green Rail backdrop/rail for Talk 03, and the join QR trigger
    - `custom-nav-controls.vue`: Custom navigation controls injecting reactions and QR triggers into Slidev's bottom bar
 
 ---

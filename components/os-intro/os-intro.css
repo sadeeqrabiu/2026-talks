@@ -1,0 +1,135 @@
+/* ── Tokens ────────────────────────────────────────────────
+   Four colours only. #01D758 = structure (lines, cells),
+   #00FF00 = the one live thing on screen, white = words.      */
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;600;700;800&display=swap');
+
+:root {
+  --os-bg: #000000;
+  --os-neon: #00ff00;
+  --os-green: #01d758;
+  --os-ink: #ffffff;
+  --os-dim: rgba(255, 255, 255, 0.45);
+  --os-faint: rgba(255, 255, 255, 0.12);
+  --os-green-a: rgba(1, 215, 88, 0.18);
+  --os-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --os-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.os-layout {
+  font-family: 'Source Code Pro', ui-monospace, monospace;
+  color: var(--os-ink);
+}
+
+.os-layout,
+.os-layout * {
+  font-family: 'Source Code Pro', ui-monospace, monospace;
+}
+
+/* ── Type ── */
+.os-kicker {
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--os-green);
+}
+.os-title,
+.slidev-layout .os-title {
+  font-weight: 800;
+  font-size: 44px;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  margin: 0;
+  color: var(--os-ink);
+}
+.os-title em {
+  font-style: normal;
+  color: var(--os-neon);
+}
+.os-sub {
+  font-size: 15px;
+  color: var(--os-dim);
+  margin: 0;
+}
+.os-label {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--os-dim);
+}
+.os-neon {
+  color: var(--os-neon);
+}
+.os-green {
+  color: var(--os-green);
+}
+
+/* Glowing node used everywhere a commit lives */
+.os-node {
+  border-radius: 999px;
+  border: 2px solid var(--os-ink);
+  background: var(--os-bg);
+  box-shadow: 0 0 0 3px rgba(0, 255, 0, 0.18), 0 0 18px rgba(0, 255, 0, 0.55);
+}
+
+/* ── Shared click-step transitions ── */
+.os-pop {
+  transition: transform 0.55s var(--os-spring), opacity 0.35s var(--os-ease);
+}
+.os-pop:not(.on) {
+  transform: scale(0.2);
+  opacity: 0;
+}
+.os-rise {
+  transition: transform 0.6s var(--os-ease), opacity 0.5s var(--os-ease);
+}
+.os-rise:not(.on) {
+  transform: translateY(14px);
+  opacity: 0;
+}
+.os-draw {
+  transition: stroke-dashoffset 0.9s var(--os-ease);
+}
+
+/* ── Slide 15 stamp + closing terminal ── */
+.stamp {
+  position: absolute;
+  right: -18px;
+  bottom: -14px;
+  padding: 6px 16px;
+  border: 3px solid #00ff00;
+  border-radius: 8px;
+  color: #00ff00;
+  font-weight: 800;
+  font-size: 30px;
+  letter-spacing: 0.1em;
+  background: #000;
+  box-shadow: 0 0 24px rgba(0, 255, 0, 0.45);
+  transform: rotate(-12deg) scale(2.4);
+  opacity: 0;
+  transition: transform 0.45s cubic-bezier(0.5, 1.8, 0.6, 1), opacity 0.2s;
+}
+.stamp.on {
+  transform: rotate(-12deg) scale(1);
+  opacity: 1;
+}
+.term-line {
+  display: flex;
+  gap: 12px;
+  font-size: 17px;
+}
+.term-line .type {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  border-right: 2px solid #00ff00;
+  animation: endtype 1.8s steps(34) 0.6s forwards;
+}
+@keyframes endtype {
+  to { width: 34ch; }
+}
+
+/* Btrust wordmark (white on transparent) — soft green glow so it sits in the palette */
+.btrust-logo,
+.osguild-logo {
+  filter: drop-shadow(0 0 10px rgba(0, 255, 0, 0.35));
+}

@@ -6,6 +6,7 @@ info: |
   ## 2026 Talks
   01 - Open Source: Beyond the Code
   02 - From First Commit to Confident Contributor: Building in the Age of AI
+  03 - Open Source: An Introduction
 drawings:
   persist: false
 mdc: true
@@ -129,4 +130,80 @@ src: ./pages/first-commit/15-start-this-week.md
 
 ---
 src: ./pages/first-commit/16-end.md
+---
+
+---
+src: ./pages/open-source-intro/01-title.md
+---
+
+---
+src: ./pages/open-source-intro/02-whoami.md
+---
+
+---
+src: ./pages/open-source-intro/03-talks.md
+---
+
+---
+src: ./pages/open-source-intro/04-join.md
+---
+
+---
+src: ./pages/open-source-intro/05-what-is-open-source.md
+---
+
+---
+src: ./pages/open-source-intro/06-history.md
+---
+
+---
+src: ./pages/open-source-intro/07-git.md
+---
+
+---
+src: ./pages/open-source-intro/08-github-gitlab.md
+---
+
+---
+src: ./pages/open-source-intro/09-git-best-practices.md
+---
+
+---
+src: ./pages/open-source-intro/10-resume-graph.md
+---
+
+---
+src: ./pages/open-source-intro/11-part-two.md
+---
+
+---
+src: ./pages/open-source-intro/12-linux.md
+---
+
+---
+src: ./pages/open-source-intro/13-google.md
+---
+
+---
+src: ./pages/open-source-intro/14-ai.md
+---
+
+---
+src: ./pages/open-source-intro/15-bitcoin.md
+---
+
+---
+src: ./pages/open-source-intro/16-funding.md
+---
+
+---
+src: ./pages/open-source-intro/17-btrust.md
+---
+
+---
+src: ./pages/open-source-intro/18-pathway.md
+---
+
+---
+src: ./pages/open-source-intro/19-end.md
 ---
