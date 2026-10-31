@@ -1,5 +1,6 @@
 ---
 layout: none
+transition: fade
 talk: open-source-intro
 index: 19
 fork: true
@@ -17,7 +18,7 @@ horizon: true
       </div>
     </div>
     <div class="flex flex-col items-center gap-3 mr-6">
-      <div class="p-5 bg-white rounded-2xl shadow-[0_0_50px_rgba(0,255,0,0.4)]">
+      <div class="p-5 bg-[#fff] rounded-2xl shadow-[0_0_50px_rgba(0,255,0,0.4)]">
         <img src="/osguild-qr-square.png" class="block size-[250px]" alt="OSGuild QR code" />
       </div>
       <span class="os-label">join OSGuild</span>

@@ -1,5 +1,6 @@
 ---
 layout: none
+transition: fade
 routeAlias: open-source-intro
 talk: open-source-intro
 index: 1

@@ -34,7 +34,7 @@ const emojis = ['🎃', '👻', '🔥', '🚀']
 
       <div class="frame" @click.stop>
         <i class="c tl" /><i class="c tr" /><i class="c bl" /><i class="c br" />
-        <div class="bg-white p-3 rounded-lg relative overflow-hidden">
+        <div class="bg-[#fff] p-3 rounded-lg relative overflow-hidden">
           <img :src="props.qr" :alt="`QR code for ${props.url}`" class="block size-[230px]">
           <div class="scan" />
         </div>

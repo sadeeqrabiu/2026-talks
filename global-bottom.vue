@@ -1,4 +1,11 @@
 <template>
+  <!-- Talk 03: Green Rail backdrop + rail. Sits UNDER the slide content (no z-index),
+       like global-bottom in the standalone deck; the black base replaces Slidev's #121212. -->
+  <div v-if="isOsIntro" class="absolute inset-0 pointer-events-none overflow-hidden bg-[#000]">
+    <OsBackdrop />
+    <OsRail />
+  </div>
+
   <div class="fixed inset-0 pointer-events-none z-[9999] overflow-hidden">
     <!-- Live Audience Emoji Reactions Layer -->
     <AudienceReactions 
@@ -10,12 +17,6 @@
       default-animation="random"
       class="size-full"
     />
-
-    <!-- Talk 03: Green Rail & Backdrop Layer -->
-    <div v-if="isOsIntro" class="absolute inset-0 pointer-events-none overflow-hidden">
-      <OsBackdrop />
-      <OsRail />
-    </div>
 
     <!-- QR popup for latecomers - opened from the nav bar QR button (custom-nav-controls.vue), hidden on the join slides -->
     <div

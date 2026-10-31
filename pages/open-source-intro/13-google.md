@@ -1,5 +1,6 @@
 ---
 layout: none
+transition: fade
 talk: open-source-intro
 index: 13
 clicks: 3

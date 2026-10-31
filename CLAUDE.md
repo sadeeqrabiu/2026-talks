@@ -103,3 +103,7 @@ Refer to the installed skills in `.claude/skills/` (and `.agents/skills/`):
 - Every `pages/first-commit/*.md` must keep `talk: first-commit` in its frontmatter, and `02-join.md` must keep `routeAlias: join-mono`. `global-bottom.vue` branches on both to render the mono audience QR popup and to suppress it on the join slide.
 - Every Talk 02 slide carries speaker notes in a trailing `<!-- ... -->` block. Keep them in sync when you change a slide's content.
 - The `CmFrame` viewport does not scroll — overflowing content is cut off at the footer. After editing a slide, view it at full click depth before considering it done.
+- Talk 03 (Green Rail) is the exception to the motion rule above: click-driven animation is its design. Keep it scoped. Its CSS lives under `.os-layout` in `components/os-intro/os-intro.css`.
+- Every `pages/open-source-intro/*.md` keeps `talk: open-source-intro`, `index: N` and `transition: fade`. `index` drives the rail node and the `NN/19` counter (`OS_TOTAL` in `components/os-intro/deck.ts`).
+- In `global-bottom.vue`, the Talk 03 backdrop/rail must stay **outside** the `fixed z-[9999]` reactions container. That way it renders under the slide, and its black base replaces Slidev's `#121212`.
+- Use `bg-[#fff]`, never `bg-white`. `style.css` has `html.dark .bg-white { #1e293b !important }`, which turns white boxes (QR frames) slate.

@@ -133,3 +133,15 @@
 .osguild-logo {
   filter: drop-shadow(0 0 10px rgba(0, 255, 0, 0.35));
 }
+
+/* Reduced motion: jump every Talk 03 animation to its end state (scoped so Talks 01/02 are untouched) */
+@media (prefers-reduced-motion: reduce) {
+  .os-layout *,
+  .os-layout *::before,
+  .os-layout *::after {
+    animation-duration: 0.001ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.001ms !important;
+    transition-delay: 0ms !important;
+  }
+}
