@@ -2,12 +2,12 @@
 layout: none
 transition: fade
 talk: open-source-intro
-index: 19
+index: 20
 fork: true
 horizon: true
 ---
 
-<OsFrame kicker="$ git push origin you" :index="19">
+<OsFrame kicker="$ git push origin you" :index="20">
   <Web class="absolute -right-10 -top-16" :size="140" />
   <div class="flex h-full items-center justify-between">
     <div class="flex flex-col gap-5">

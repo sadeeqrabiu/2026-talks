@@ -1,5 +1,5 @@
 /* Total slides in open-source-intro */
-export const OS_TOTAL = 19
+export const OS_TOTAL = 20
 
 /* One switch for the costume layer — flip to false after Halloween. */
 export const HALLOWEEN = true

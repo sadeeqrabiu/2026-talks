@@ -205,5 +205,9 @@ src: ./pages/open-source-intro/18-pathway.md
 ---
 
 ---
-src: ./pages/open-source-intro/19-end.md
+src: ./pages/open-source-intro/19-workshop.md
+---
+
+---
+src: ./pages/open-source-intro/20-end.md
 ---

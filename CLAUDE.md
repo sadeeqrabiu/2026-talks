@@ -22,7 +22,7 @@ This workflow is optimized for **Claude Opus 5.5** (`claude-opus-5-5`).
 
 3. **Talk 03: "Open Source — An Introduction"**
    - **Route Alias**: `open-source-intro`
-   - **Slide Range**: `pages/open-source-intro/01-title.md` through `pages/open-source-intro/19-end.md`
+   - **Slide Range**: `pages/open-source-intro/01-title.md` through `pages/open-source-intro/20-end.md`
    - **Design System**: **Green Rail** (`os-intro.css`)
    - **Aesthetic**: Four colors (#01D758 structure, #00FF00 live accent, #FFFFFF text, #000000 background). Source Code Pro typography, vertical glowing commit rail with live node progress, parallax dot grid background, planetary horizon, and Halloween accents.
 
@@ -104,6 +104,7 @@ Refer to the installed skills in `.claude/skills/` (and `.agents/skills/`):
 - Every Talk 02 slide carries speaker notes in a trailing `<!-- ... -->` block. Keep them in sync when you change a slide's content.
 - The `CmFrame` viewport does not scroll — overflowing content is cut off at the footer. After editing a slide, view it at full click depth before considering it done.
 - Talk 03 (Green Rail) is the exception to the motion rule above: click-driven animation is its design. Keep it scoped. Its CSS lives under `.os-layout` in `components/os-intro/os-intro.css`.
-- Every `pages/open-source-intro/*.md` keeps `talk: open-source-intro`, `index: N` and `transition: fade`. `index` drives the rail node and the `NN/19` counter (`OS_TOTAL` in `components/os-intro/deck.ts`).
+- Every `pages/open-source-intro/*.md` keeps `talk: open-source-intro`, `index: N` and `transition: fade`. `index` drives the rail node and the `NN/20` counter (`OS_TOTAL` in `components/os-intro/deck.ts`).
 - In `global-bottom.vue`, the Talk 03 backdrop/rail must stay **outside** the `fixed z-[9999]` reactions container. That way it renders under the slide, and its black base replaces Slidev's `#121212`.
 - Use `bg-[#fff]`, never `bg-white`. `style.css` has `html.dark .bg-white { #1e293b !important }`, which turns white boxes (QR frames) slate.
+- Talk 03 slide 19 (workshop leaderboard) reads its numbers from `components/os-intro/leaderboard.ts`, a GitHub API snapshot of OsGuild-HQ/Mind-Reader-Arena taken on 1 Nov 2026. The avatars are stored locally in `public/leaderboard/` so the slide works offline. Re-rank by reordering `podium`.
