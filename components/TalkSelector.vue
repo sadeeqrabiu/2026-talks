@@ -3,18 +3,20 @@ import { onKeyStroke } from '@vueuse/core'
 import { useNav, useSlideContext } from '@slidev/client'
 import './cyber/cyber-mono.css'
 import './os-intro/os-intro.css'
+import './btc-ai/btc-ai.css'
 
 const nav = useNav()
 const { $page } = useSlideContext()
 
-const open = (alias: 'open-source' | 'first-commit' | 'open-source-intro') => nav.go(alias)
+const open = (alias: 'open-source' | 'first-commit' | 'open-source-intro' | 'ai-bitcoin') => nav.go(alias)
 
 // Number keys pick a talk, but only while the selector is on screen
-onKeyStroke(['1', '2', '3'], (e) => {
+onKeyStroke(['1', '2', '3', '4'], (e) => {
   if (nav.currentPage.value !== $page.value) return
   if (e.key === '1') open('open-source')
   else if (e.key === '2') open('first-commit')
   else if (e.key === '3') open('open-source-intro')
+  else if (e.key === '4') open('ai-bitcoin')
 })
 </script>
 
@@ -30,7 +32,7 @@ onKeyStroke(['1', '2', '3'], (e) => {
     <div class="flex flex-1 min-h-0">
       <!-- 01 — Dark glass (existing talk's language) -->
       <button
-        class="group relative flex w-1/3 flex-col justify-between p-8 text-left bg-transparent border-0 text-white cursor-pointer"
+        class="group relative flex w-1/4 flex-col justify-between p-6 text-left bg-transparent border-0 text-white cursor-pointer"
         @click.stop="open('open-source')"
       >
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[240px] h-[240px] bg-[#22c55e]/15 blur-[100px] rounded-full pointer-events-none transition-opacity duration-300 opacity-60 group-hover:opacity-100" />
@@ -54,7 +56,7 @@ onKeyStroke(['1', '2', '3'], (e) => {
 
       <!-- 02 — Cyber mono -->
       <button
-        class="cm group relative flex w-1/3 flex-col justify-between p-8 text-left border-0 border-l border-solid border-[var(--cm-line)] cursor-pointer transition-colors duration-200 hover:!bg-[#fff] hover:!text-black"
+        class="cm group relative flex w-1/4 flex-col justify-between p-6 text-left border-0 border-l border-solid border-[var(--cm-line)] cursor-pointer transition-colors duration-200 hover:!bg-[#fff] hover:!text-black"
         @click.stop="open('first-commit')"
       >
         <div class="flex items-center justify-between">
@@ -80,7 +82,7 @@ onKeyStroke(['1', '2', '3'], (e) => {
 
       <!-- 03 — Green rail (Open Source Intro) -->
       <button
-        class="os-layout group relative flex w-1/3 flex-col justify-between p-8 text-left border-0 border-l border-solid border-[#01d758]/25 bg-transparent cursor-pointer transition-all duration-200 hover:bg-[#01d758]/5 hover:border-[#00ff00]/60"
+        class="os-layout group relative flex w-1/4 flex-col justify-between p-6 text-left border-0 border-l border-solid border-[#01d758]/25 bg-transparent cursor-pointer transition-all duration-200 hover:bg-[#01d758]/5 hover:border-[#00ff00]/60"
         @click.stop="open('open-source-intro')"
       >
         <div class="flex items-center justify-between">
@@ -104,6 +106,30 @@ onKeyStroke(['1', '2', '3'], (e) => {
         <span class="os-label !text-[#01d758] group-hover:!text-[#00ff00] transition-colors">
           [ PRESS 3 ]
         </span>
+      </button>
+
+      <!-- 04 — Orange grid (AI in Bitcoin) -->
+      <button
+        class="bai group relative flex w-1/4 flex-col justify-between p-6 text-left border-0 cursor-pointer transition-colors duration-200 bg-[var(--bai-orange)] hover:bg-[var(--bai-deep)]"
+        style="background-image: linear-gradient(rgba(255,205,160,.35) 1px, transparent 1px), linear-gradient(90deg, rgba(255,205,160,.35) 1px, transparent 1px); background-size: 40px 40px;"
+        @click.stop="open('ai-bitcoin')"
+      >
+        <div class="flex items-center justify-between">
+          <span class="bai-kicker !text-[10px]">04 · AI × BTC</span>
+          <span class="bai-kicker !text-[10px]">₿</span>
+        </div>
+
+        <div>
+          <h2 class="text-[24px] font-900 leading-[1.08] text-white m-0 tracking-tight">
+            Use of AI in Bitcoin Development
+          </h2>
+          <div class="h-px my-4 bg-[#fff]/50" />
+          <p class="text-xs text-white m-0 leading-relaxed font-600">
+            Assistive, not authoritative.
+          </p>
+        </div>
+
+        <span class="bai-kicker !text-[10px]">[ PRESS 4 ]</span>
       </button>
     </div>
   </div>

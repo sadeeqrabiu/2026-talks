@@ -26,9 +26,15 @@ This workflow is optimized for **Claude Opus 5.5** (`claude-opus-5-5`).
    - **Design System**: **Green Rail** (`os-intro.css`)
    - **Aesthetic**: Four colors (#01D758 structure, #00FF00 live accent, #FFFFFF text, #000000 background). Source Code Pro typography, vertical glowing commit rail with live node progress, parallax dot grid background, planetary horizon, and Halloween accents.
 
-4. **Shared Shell & Controls**
-   - `slides.md` slide 1: `TalkSelector.vue` (`routeAlias: index`, supports keys `1`, `2`, `3`)
-   - `global-bottom.vue`: Global layer managing audience reaction animations, Green Rail backdrop/rail for Talk 03, and the join QR trigger
+4. **Talk 04: "Use of AI in Bitcoin Development"**
+   - **Route Alias**: `ai-bitcoin`
+   - **Slide Range**: `pages/ai-bitcoin/01-title.md` through `pages/ai-bitcoin/13-closing.md` (30-minute slot)
+   - **Design System**: **Orange Grid** (`components/btc-ai/btc-ai.css`)
+   - **Aesthetic**: Orange grid field, white pixel icons on lighter tiles, thin white wires, off-white paper panels, one ink (#1A1A2E), Source Code Pro. The canvas backdrop (`BaiBackdrop.vue`) persists across every slide. No dark panels or dark backdrops: ink is only a small accent.
+
+5. **Shared Shell & Controls**
+   - `slides.md` slide 1: `TalkSelector.vue` (`routeAlias: index`, supports keys `1`, `2`, `3`, `4`)
+   - `global-bottom.vue`: Global layer managing audience reaction animations, Green Rail backdrop/rail for Talk 03, the Orange Grid canvas for Talk 04, and the join QR trigger
    - `custom-nav-controls.vue`: Custom navigation controls injecting reactions and QR triggers into Slidev's bottom bar
 
 ---
@@ -104,6 +110,7 @@ Refer to the installed skills in `.claude/skills/` (and `.agents/skills/`):
 - Every Talk 02 slide carries speaker notes in a trailing `<!-- ... -->` block. Keep them in sync when you change a slide's content.
 - The `CmFrame` viewport does not scroll — overflowing content is cut off at the footer. After editing a slide, view it at full click depth before considering it done.
 - Talk 03 (Green Rail) is the exception to the motion rule above: click-driven animation is its design. Keep it scoped. Its CSS lives under `.os-layout` in `components/os-intro/os-intro.css`.
+- Talk 04 (Orange Grid) is also exempt from the motion rule: animation and on-slide interaction are its design. Its CSS lives under `.bai`. Every `pages/ai-bitcoin/*.md` keeps `talk: ai-bitcoin`, `index: N`, `scene: <backdrop layout>` and `transition: fade`, and `03-join.md` keeps `routeAlias: join-bai`; `BAI_TOTAL` in `components/btc-ai/deck.ts` feeds the counter. Demos start from `useBaiActive()`, not on mount, because Slidev keeps neighbouring slides mounted.
 - Every `pages/open-source-intro/*.md` keeps `talk: open-source-intro`, `index: N` and `transition: fade`. `index` drives the rail node and the `NN/20` counter (`OS_TOTAL` in `components/os-intro/deck.ts`).
 - In `global-bottom.vue`, the Talk 03 backdrop/rail must stay **outside** the `fixed z-[9999]` reactions container. That way it renders under the slide, and its black base replaces Slidev's `#121212`.
 - Use `bg-[#fff]`, never `bg-white`. `style.css` has `html.dark .bg-white { #1e293b !important }`, which turns white boxes (QR frames) slate.

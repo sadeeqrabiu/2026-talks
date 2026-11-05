@@ -7,6 +7,7 @@ info: |
   01 - Open Source: Beyond the Code
   02 - From First Commit to Confident Contributor: Building in the Age of AI
   03 - Open Source: An Introduction
+  04 - Use of AI in Bitcoin Development
 drawings:
   persist: false
 mdc: true
@@ -210,4 +211,56 @@ src: ./pages/open-source-intro/19-workshop.md
 
 ---
 src: ./pages/open-source-intro/20-end.md
+---
+
+---
+src: ./pages/ai-bitcoin/01-title.md
+---
+
+---
+src: ./pages/ai-bitcoin/02-whoami.md
+---
+
+---
+src: ./pages/ai-bitcoin/03-join.md
+---
+
+---
+src: ./pages/ai-bitcoin/04-open-source.md
+---
+
+---
+src: ./pages/ai-bitcoin/05-ecosystem.md
+---
+
+---
+src: ./pages/ai-bitcoin/06-how-change-lands.md
+---
+
+---
+src: ./pages/ai-bitcoin/07-who-keeps-it-running.md
+---
+
+---
+src: ./pages/ai-bitcoin/08-assistive.md
+---
+
+---
+src: ./pages/ai-bitcoin/09-use-cases.md
+---
+
+---
+src: ./pages/ai-bitcoin/10-risks.md
+---
+
+---
+src: ./pages/ai-bitcoin/11-review-bottleneck.md
+---
+
+---
+src: ./pages/ai-bitcoin/12-before-you-pr.md
+---
+
+---
+src: ./pages/ai-bitcoin/13-closing.md
 ---

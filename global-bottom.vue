@@ -6,6 +6,11 @@
     <OsRail />
   </div>
 
+  <!-- Talk 04: orange grid canvas, shared by every slide. Same layering rule as Talk 03. -->
+  <div v-if="isBtcAi" class="absolute inset-0 overflow-hidden pointer-events-none">
+    <BaiBackdrop />
+  </div>
+
   <div class="fixed inset-0 pointer-events-none z-[9999] overflow-hidden">
     <!-- Live Audience Emoji Reactions Layer -->
     <AudienceReactions 
@@ -98,6 +103,43 @@
         </button>
       </div>
 
+      <!-- Expanded Orange Grid Card (Talk 04) -->
+      <div
+        v-else-if="isBtcAi"
+        @click.stop
+        class="w-64 p-4 rounded-xl bg-[#faf8f4] text-[#1a1a2e] flex flex-col shadow-[0_18px_50px_rgba(120,35,0,0.28)]"
+        style="font-family: 'Source Code Pro', ui-monospace, monospace"
+      >
+        <div class="flex items-center justify-between mb-3 text-[11px] font-bold tracking-[0.12em] uppercase">
+          <span>Live reactions</span>
+          <button
+            @click.stop="isQrExpanded = false"
+            class="px-1.5 rounded bg-transparent border border-solid border-[#1a1a2e] text-[#1a1a2e] text-[11px] cursor-pointer"
+            title="Close"
+          >
+            ×
+          </button>
+        </div>
+        <div class="bg-[#fff] p-2.5 rounded-lg">
+          <img src="/audience-qr.svg" alt="Audience Live Interaction QR Code" class="block w-full aspect-square" />
+        </div>
+        <a
+          :href="AUDIENCE_URL"
+          target="_blank"
+          rel="noopener"
+          @click.stop
+          class="mt-3 text-[10px] !text-[#1a1a2e] break-all"
+        >
+          slidev-audience-client.pages.dev
+        </a>
+        <button
+          @click.stop="goToQRSlide"
+          class="mt-3 w-full py-1.5 rounded-lg bg-[#ff5c0a] border-0 text-white text-[11px] font-bold cursor-pointer"
+        >
+          Open join slide →
+        </button>
+      </div>
+
       <!-- Expanded Floating Glass Modal Card (Talk 01) -->
       <div
         v-else
@@ -163,6 +205,7 @@ import { useNav } from '@slidev/client'
 import AudienceReactions from './components/audience/AudienceReactions.vue'
 import OsBackdrop from './components/os-intro/OsBackdrop.vue'
 import OsRail from './components/os-intro/OsRail.vue'
+import BaiBackdrop from './components/btc-ai/BaiBackdrop.vue'
 import { registerDeckTools } from './composables/deckTools'
 
 const REACTIONS_HOST = 'slidev-audience.s4ndeep1203.workers.dev'
@@ -179,12 +222,14 @@ onMounted(() => registerDeckTools(nav))
 const frontmatter = computed(() => nav.currentSlideRoute.value?.meta?.slide?.frontmatter ?? {})
 
 // Hide the QR popup on the selector and on each talk's dedicated QR (join) slide
-const isDedicatedQRSlide = computed(() => ['join', 'join-mono', 'join-os', 'index'].includes(frontmatter.value.routeAlias))
+const isDedicatedQRSlide = computed(() => ['join', 'join-mono', 'join-os', 'join-bai', 'index'].includes(frontmatter.value.routeAlias))
 
 // Talk 02 uses the black & white cyber-mono system - no green, no ping
 const isMono = computed(() => frontmatter.value.talk === 'first-commit')
 // Talk 03 uses the green rail system
 const isOsIntro = computed(() => frontmatter.value.talk === 'open-source-intro')
+// Talk 04 uses the orange grid system
+const isBtcAi = computed(() => frontmatter.value.talk === 'ai-bitcoin')
 
 function goToQRSlide() {
   isQrExpanded.value = false
@@ -192,6 +237,8 @@ function goToQRSlide() {
     nav.go('join-mono')
   } else if (isOsIntro.value) {
     nav.go('join-os')
+  } else if (isBtcAi.value) {
+    nav.go('join-bai')
   } else {
     nav.go('join')
   }
